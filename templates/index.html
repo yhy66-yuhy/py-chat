@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>聊天界面</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>聊天界面</h1>
+    <form action="/" method="POST">
+        <input type="text" name="message" placeholder="输入你的消息">
+        <input type="submit" value="发送">
+    </form>
+    {% if message %}
+        <p><strong>你:</strong> {{ message }}</p>
+        {% if response %}
+            <p><strong>AI:</strong> {{ response['choices'][0]['message']['content'] }}</p>
+        {% endif %}
+    {% endif %}
+</body>
+</html>
